@@ -3,6 +3,6 @@
   "target": {
     "namespace": "android_app",
     "package_name": "jp.summitslead.tossfornotion",
-    "sha256_cert_fingerprints": ["1D:81:D6:43:36:90:66:E8:59:DF:8A:7F:1E:98:C7:D3:85:A7:97:31:36:4C:F0:28:EA:6C:06:55:82:95:D2:D4"]
+    "sha256_cert_fingerprints": ["D8:36:30:EE:0A:E0:EB:3D:12:36:4B:37:28:34:06:D1:63:00:14:E5:6D:54:E9:82:D0:8C:EA:13:85:AA:B9:EC"]
   }
 }]
