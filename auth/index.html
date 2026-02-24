@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Authenticating Toss for Notion...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const code = urlParams.get('code');
+            if (code) {
+                // アプリを呼び出す
+                window.location.href = "tossfornotion://auth?code=" + code;
+                setTimeout(function() {
+                    document.getElementById('status').innerHTML = 
+                        '<p>If the app didn\'t open, <a href="tossfornotion://auth?code=' + code + '">click here</a>.</p>';
+                }, 5000);
+            } else {
+                document.getElementById('status').innerText = "Authorization code not found.";
+            }
+        };
+    </script>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding-top: 50px; background: #fff; color: #333; }
+    </style>
+</head>
+<body>
+    <div id="status">Connecting to Toss for Notion...</div>
+</body>
+</html>
