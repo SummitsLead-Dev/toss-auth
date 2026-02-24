@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Authenticating Toss for Notion...</title>
+    <title>Authenticating...</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>
         window.onload = function() {
@@ -10,17 +10,24 @@
             if (code) {
                 // アプリを呼び出す
                 window.location.href = "tossfornotion://auth?code=" + code;
+                
+                // 表示を切り替えて「戻れる」ことを伝える
                 setTimeout(function() {
-                    document.getElementById('status').innerHTML = 
-                        '<p>If the app didn\'t open, <a href="tossfornotion://auth?code=' + code + '">click here</a>.</p>';
-                }, 5000);
+                    document.getElementById('status').innerHTML = `
+                        <div style="padding: 20px; border-radius: 10px; background: #e8f5e9; color: #2e7d32;">
+                            <h3>Authentication Success!</h3>
+                            <p>You can now close this tab and return to the app.</p>
+                            <button onclick="window.close()" style="padding: 10px 20px; cursor: pointer;">Close this tab</button>
+                        </div>
+                    `;
+                }, 1000);
             } else {
                 document.getElementById('status').innerText = "Authorization code not found.";
             }
         };
     </script>
     <style>
-        body { font-family: sans-serif; text-align: center; padding-top: 50px; background: #fff; color: #333; }
+        body { font-family: -apple-system, sans-serif; text-align: center; padding-top: 100px; background: #fafafa; }
     </style>
 </head>
 <body>
