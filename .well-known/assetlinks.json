@@ -1,8 +1,15 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target": {
-    "namespace": "android_app",
-    "package_name": "jp.summitslead.tossfornotion",
-    "sha256_cert_fingerprints": ["1D:81:D6:43:36:90:66:E8:59:DF:8A:7F:1E:98:C7:D3:85:A7:97:31:36:4C:F0:28:EA:6C:06:55:82:95:D2:D4"]
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "jp.summitslead.tossfornotion",
+      "sha256_cert_fingerprints": [
+        "1D:81:D6:43:36:90:66:E8:59:DF:8A:7F:1E:98:C7:D3:85:A7:97:31:36:4C:F0:28:EA:6C:06:55:82:95:D2:D4",
+        "AA:C6:C9:2B:34:DC:C9:C1:AE:89:94:F5:91:F6:C5:25:53:9C:D5:BC:FD:24:4E:43:FD:CD:44:CD:B3:B5:3D:6C"
+      ]
+    }
   }
-}]
+]
