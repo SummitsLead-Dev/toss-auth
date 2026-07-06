@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Toss for Notion — アプリに戻る</title>
+<title>Toss for Notion</title>
 <style>
-  body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center;
-         justify-content: center; min-height: 90vh; margin: 0; padding: 24px; text-align: center;
-         background: #fafafa; color: #333; }
+  body { font-family: -apple-system, sans-serif; display: flex; flex-direction: column;
+         align-items: center; justify-content: center; min-height: 90vh; margin: 0;
+         padding: 24px; text-align: center; background: #fafafa; color: #333; }
   .btn { display: inline-block; margin-top: 24px; padding: 16px 40px; border-radius: 12px;
          background: #7E57C2; color: #fff; font-size: 18px; font-weight: bold;
          text-decoration: none; }
@@ -15,11 +15,22 @@
 </style>
 </head>
 <body>
-  <h2>ログインが完了しました</h2>
-  <p>ボタンをタップしてアプリに戻ってください。<br>Tap the button to return to the app.</p>
-  <a id="return-btn" class="btn" href="#">アプリに戻る / Return to App</a>
-  <p class="note">ボタンが機能しない場合は、アプリを一度開き直してから再度ログインしてください。</p>
+  <h2 id="title">Login complete</h2>
+  <p id="desc">Tap the button to return to the app.</p>
+  <a id="return-btn" class="btn" href="#">Return to App</a>
+  <p id="note" class="note">If the button does not work, reopen the app and log in again.</p>
   <script>
+    // 端末言語が日本語なら表示を日本語に切り替え
+    var isJa = (navigator.language || "").toLowerCase().indexOf("ja") === 0;
+    if (isJa) {
+      document.documentElement.lang = "ja";
+      document.getElementById("title").textContent = "ログインが完了しました";
+      document.getElementById("desc").textContent = "ボタンをタップしてアプリに戻ってください。";
+      document.getElementById("return-btn").textContent = "アプリに戻る";
+      document.getElementById("note").textContent =
+        "ボタンが機能しない場合は、アプリを開き直してから再度ログインしてください。";
+    }
+
     // code / state などのクエリをそのままカスタムスキームへ引き継ぐ
     var target = "tossfornotion://auth" + window.location.search;
     document.getElementById("return-btn").setAttribute("href", target);
